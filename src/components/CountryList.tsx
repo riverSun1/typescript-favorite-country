@@ -55,16 +55,20 @@ const CountryList = () => {
 
   return (
     <div className="flex flex-col gap-10 justify-center items-center">
-      <div className="font-bold text-2xl">Favorite Countries</div>
+      <div className="font-bold text-2xl">Favorite Countries ❤</div>
       <div className="flex flex-row flex-wrap gap-5 justify-center items-center">
-        {selectedCountries.map((country) => (
-          <CountryCard
-            key={country.name.common}
-            country={country}
-            handleSelectedCountry={handleSelectedCountry}
-            isSelected={true}
-          />
-        ))}
+        {selectedCountries.length === 0 ? (
+          <div className="text-red-500 mb-5">( please select country! )</div>
+        ) : (
+          selectedCountries.map((country) => (
+            <CountryCard
+              key={country.name.common}
+              country={country}
+              handleSelectedCountry={handleSelectedCountry}
+              isSelected={true}
+            />
+          ))
+        )}
       </div>
       <div className="font-bold text-3xl">Countries</div>
       <div className="flex flex-row flex-wrap gap-5 justify-center items-center">

@@ -15,8 +15,8 @@ const CountryCard = ({
 
   return (
     <div
-      className={`border rounded-lg shadow-xl p-5 h-60 w-60 ${
-        isSelected ? "border-green-500" : ""
+      className={`border rounded-lg shadow-xl p-5 h-60 w-60 cursor-pointer hover:bg-gray-100 ${
+        isSelected ? "border-green-500 bg-green-100" : "bg-white"
       }`}
       onClick={() => handleSelectedCountry(country)}
     >
